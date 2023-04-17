@@ -1,5 +1,4 @@
 package code65pack;
-
 public class code65class {
 	 static void sort(int arr[])
 	    {
@@ -25,9 +24,17 @@ public class code65class {
 	    }
 	 
 	 public static void main(String[] args) {
+		 int sum=0;
 		 int[] arr= {1789 , 2035 , 1899 , 1456 , 2013 };
 		 sort(arr);
 		 printArray(arr);
+		 for (int i = 0; i < arr.length; i++)
+	        {sum=sum+arr[i];}
+		 
+		double aver=(double)sum/arr.length;
+		 System.out.println("Sum is "+sum);
+		 System.out.printf("average value is %.2f",aver);
+	 
 	 }
 	
 }
