@@ -104,7 +104,7 @@ public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 	
 }
 
-public void print() {
+public void printdvd() {
 	System.out.println("\n***********************CART***********************");
 	System.out.println("Ordered items:");
 	for (int i=1; i<=qtyOrdered; i++) {
