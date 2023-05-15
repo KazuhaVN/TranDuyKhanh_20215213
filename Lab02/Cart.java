@@ -104,5 +104,41 @@ public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 	
 }
 
+public void printdvd() {
+	System.out.println("\n***********************CART***********************");
+	System.out.println("Ordered items:");
+	for (int i=1; i<=qtyOrdered; i++) {
+		System.out.println(i + ". " + itemOrdered[i-1].toString());
+	}
+	System.out.println("Total cost: " + this.totalCost() + "$");
+	System.out.println("***************************************************");
 }
+
+
+public void searchTitle(String title) {
+	int found = 0;
+	for (int i=0; i<qtyOrdered; i++) {
+		if (itemOrdered[i].isMatch(title)) {
+			System.out.println(itemOrdered[i].toString());
+			found = 1;
+		}
+	}
+	if (found==0){
+		System.out.println("Item not found");
+	}
+}
+public void searchId(int id) {
+	for (int i=0; i<qtyOrdered; i++) {
+		if (itemOrdered[i].getId() == id) {
+			System.out.println(itemOrdered[i].toString());
+			return;
+		}
+	}
+	System.out.println("Item not found");
+}
+
+}
+
+
+
 
