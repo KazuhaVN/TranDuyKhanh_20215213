@@ -11,9 +11,12 @@ public class CartTest {
 		cart.addDigitalVideoDisc(dvd1);
 		cart.addDigitalVideoDisc(dvd2);
 		cart.addDigitalVideoDisc(dvd3);
-		
 		cart.printdvd();
 
+		cart.searchId(1);
+		cart.searchTitle("ABC");
+		cart.searchTitle("Aladin");
+		
 	}
 
 }

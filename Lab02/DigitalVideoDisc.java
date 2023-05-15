@@ -92,6 +92,9 @@ public String toString() {
 	return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirectory() + " - " + this.getLength() + " : " + this.getCost() + " $";
 }
 
+public boolean isMatch(String title) {
+	return title.equals(this.getTitle()) ;
+}
 
 }
 
