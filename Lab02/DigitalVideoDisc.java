@@ -88,6 +88,9 @@ public void setDvD(String title,String category,String directory, int length ,fl
 	setCost(cost);
 }
 
+public String toString() {
+	return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirectory() + " - " + this.getLength() + " : " + this.getCost() + " $";
+}
 
 
 }
