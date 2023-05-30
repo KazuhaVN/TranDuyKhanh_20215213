@@ -1,15 +1,9 @@
-package hust.soict.dsai.aims.disc;
+package hust.soict.dsai.aims.media;
 
 
-public class DigitalVideoDisc {
+
+public class DigitalVideoDisc extends Disc implements Playable{
 	
-
-private String title;
-private String category;
-private String directory;
-private int length;
-private float cost;
-private int id;
 private static int nbDigitalVideoDiscs = 0;
 public int getId() {
 	return id;
@@ -24,8 +18,8 @@ public String getTitle() {
 public String getCategory() {
 	return category;
 }
-public String getDirectory() {
-	return directory;
+public String getDirector() {
+	return director;
 }
 public int getLength() {
 	return length;
@@ -47,19 +41,19 @@ public DigitalVideoDisc(String title, String category, float cost) {
 	this.cost = cost;
 }
 
-public DigitalVideoDisc(String title, String category, String directory, float cost) {
+public DigitalVideoDisc(String title, String category, String director, float cost) {
 	this.setId();
 	this.title = title;
 	this.category = category;
-	this.directory = directory;
+	this.director = director;
 	this.cost = cost;
 }
 
-public DigitalVideoDisc(String title, String category, String directory, int length, float cost) {
+public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
 	this.setId();
 	this.title = title;
 	this.category = category;
-	this.directory = directory;
+	this.director = director;
 	this.length = length;
 	this.cost = cost;
 }
@@ -70,8 +64,8 @@ public void setTitle(String title) {
 public void setCategory(String category) {
 	this.category = category;
 }
-public void setDirectory(String directory) {
-	this.directory = directory;
+public void setDirector(String director) {
+	this.director = director;
 }
 public void setLength(int length) {
 	this.length = length;
@@ -83,18 +77,23 @@ public void setCost(float cost) {
 public void setDvD(String title,String category,String directory, int length ,float cost ) {
 	setTitle(title);
 	setCategory(category);
-	setDirectory(directory);
+	setDirector(directory);
 	setLength(length);
 	setCost(cost);
 }
 
 public String toString() {
-	return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirectory() + " - " + this.getLength() + " : " + this.getCost() + " $";
+	return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + " : " + this.getCost() + " $";
 }
 
 public boolean isMatch(String title) {
 	return title.equals(this.getTitle()) ;
 }
 
+public void play() {
+	System.out.println("Playing DVD: " + this.getTitle());
+	System.out.println("DVD length: " + this.getLength());
 }
 
+
+}

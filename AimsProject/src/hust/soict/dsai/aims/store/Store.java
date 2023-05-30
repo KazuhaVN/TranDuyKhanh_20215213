@@ -1,45 +1,44 @@
 package hust.soict.dsai.aims.store;
-
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.*; 
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-    private DigitalVideoDisc[] itemsInStore;
-    private int numItems;
+	private int capacity;
+    private ArrayList<Media> itemsInStore = new ArrayList<>();
 
     public Store(int capacity) {
-        itemsInStore = new DigitalVideoDisc[capacity];
-        numItems = 0;
+        this.capacity = capacity;
     }
-
-    public void addDVD(DigitalVideoDisc disc) {
-    	if (numItems < itemsInStore.length) {
-			itemsInStore[numItems] = disc;
-			numItems ++;
-			System.out.println("The disc has been added to store");
+    
+    public void print() {
+		System.out.println("Items available in store:");
+		for (int i=1; i<=itemsInStore.size(); i++) {
+			System.out.println(i + ". " + itemsInStore.get(i-1).toString());
+		}
+		System.out.println("");
+	}
+    
+    public void addMedia(Media media) {
+		if (itemsInStore.size() < capacity) {
+			itemsInStore.add(media);
+			System.out.println("added");
 		}
 		else {
-			System.out.println("Your store is full!");
+			System.out.println("full store");
 		}
-    }
-
-    public void removeDVD(DigitalVideoDisc disc) {
-    	if (numItems==0) {
-			System.out.println("Your store is empty!");
-			return;
+	}
+	
+	public void removeMedia(Media media) {
+		if (itemsInStore.isEmpty()) {
+			System.out.println("empty store");
+		}
+		else if (!itemsInStore.contains(media)) {
+			System.out.println("Media is not found ");
 		}
 		else {
-			for (int i=0; i<numItems; i++) {      
-				if (itemsInStore[i] == disc) {       //if disc is found
-					for (int j=i; j<numItems-1; j++) {
-						itemsInStore[j] = itemsInStore[j+1];
-					}
-					itemsInStore[numItems-1] = null;
-					numItems--;
-					System.out.println("The disc has been removed from your store");
-					return;
-				}
-			}
-			System.out.println("The disc is not found in your store!");
+			itemsInStore.remove(media);
+			System.out.println("removed");
 		}
-    }
+	}
 }
+	
