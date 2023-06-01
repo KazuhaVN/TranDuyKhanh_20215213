@@ -39,9 +39,16 @@ public void removeTrack(Track a) {
 	}
 }
 
-	public CompactDisc() {
-		// TODO Auto-generated constructor stub
-	}
+public CompactDisc(int id, String title, String category, float cost, String director, String artist, ArrayList<Track> tracks) {
+	super(id, title, category, cost, director);
+	this.artist = artist;
+	this.tracks = tracks;
+}
+
+public CompactDisc(int id, String title, String category, float cost, String director, String artist) {
+	super(id, title, category, cost, director);
+	this.artist = artist;
+}
 
 	
 	public void play() {

@@ -12,6 +12,14 @@ public void setAuthors(List<String> authors) {
 
 
 
+public Book(int id, String title, String category, float cost) {
+	super(id, title, category, cost);
+}
+
+public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
+	super(id, title, category, cost);
+	this.authors = authors;
+}
 public Book(){
 	
 }
@@ -30,5 +38,8 @@ public void removeAuthors(String authorName) {
 	else {return;}
 }
 
+public String toString() {
+	return "Book - Id: " + this.getId() + " - " + this.getTitle() + " - " + this.getCategory()  + " : " + this.getCost() + " $";
+}
 
 }

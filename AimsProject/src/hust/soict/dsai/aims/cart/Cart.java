@@ -31,6 +31,15 @@ public void removeMedia(Media a) {
 	
 }
 
+public void print() {
+	System.out.println("\n***********************CART***********************");
+	System.out.println("Ordered items:");
+	for (int i=1; i<=itemsOrdered.size(); i++) {
+		System.out.println(i + ". " + itemsOrdered.get(i-1).toString());
+	}
+	System.out.println("Total cost: " + this.totalCost() + "$");
+	System.out.println("***************************************************");
+}
 
 // array method 
 //public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
@@ -85,6 +94,25 @@ public void searchId(int id) {
 	
 	System.out.println("Item not found");
 	return ;
+}
+public void sortByTitle() {
+    Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+}
+
+public void sortByCost() {
+    Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+}
+
+public void makeEmpty() {
+	itemsOrdered.clear();
+}
+
+public Media findByTitle(String title) {
+	for (Media media : itemsOrdered) {
+		if (media.getTitle().equals(title))
+			return media;
+	}
+	return null;
 }
 
 }

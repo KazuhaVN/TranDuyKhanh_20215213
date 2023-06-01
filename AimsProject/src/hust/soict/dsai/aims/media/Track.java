@@ -23,5 +23,12 @@ public void play() {
 	System.out.println("DVD length: " + this.getLength());
 }
 
+public boolean equals(Object o) {
+    if (o == null || !(o instanceof Track)) {
+        return false;
+    }
+    Track track = (Track) o;
+    return title.equals(track.title) && (length == track.length);
+}
 
 }
