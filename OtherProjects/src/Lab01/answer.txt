@@ -1,0 +1,21 @@
+Exercise 6.1
+
+What happens if users choose “Cancel”?
+- If users choose "Cancel" they will receive message dialog which says " You've chosen: No"
+
+How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do”  and “I don't”
+- we use JOptionPane.showOptionDialog so we can customize the options.
+The code below describes what i have done to customize the options to “I do”  and “I don't”
+
+Object[] options = {"I do", "I don't",};
+	
+	int n = JOptionPane.showOptionDialog(null,"Do you want to change your first class ticket?",
+		    null,
+		    JOptionPane.YES_NO_CANCEL_OPTION,
+		    JOptionPane.QUESTION_MESSAGE,
+		    null,
+		    options,
+		    options[1]);
+	JOptionPane.showMessageDialog(null,"You've chosen: "+(n==JOptionPane.YES_OPTION?"Yes":"No"));
+  
+  

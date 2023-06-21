@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author LapTop
- *
- */
-module AimsProject {
-}
